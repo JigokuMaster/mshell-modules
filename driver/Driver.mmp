@@ -1,0 +1,39 @@
+
+TARGET Driver_mm.dll
+TARGETTYPE dll
+
+// UIDs and Capabilities for Self-Signed mShell installations
+
+//UID 0x1000008d 0xa0009986
+
+//CAPABILITY LocalServices NetworkServices ReadUserData \
+//UserEnvironment WriteUserData
+
+
+// UIDs and Capabilities for Online Signed mShell installations
+/*
+UID 0x1000008d 0xe7e0cab8
+CAPABILITY LocalServices NetworkServices ReadUserData \
+UserEnvironment WriteUserData \
+Location PowerMgmt ProtServ ReadDeviceData SurroundingsDD \
+SwEvent TrustedUI WriteDeviceData
+*/
+
+// UIDs and Capabilities for DevCert Signed mShell installations
+
+//UID 0x1000008d 0xa0009885
+
+UID 0x1000008d 0xa0009986
+CAPABILITY LocalServices NetworkServices ReadUserData \
+UserEnvironment WriteUserData \
+Location PowerMgmt ProtServ ReadDeviceData SurroundingsDD \
+SwEvent TrustedUI WriteDeviceData \
+CommDD DiskAdmin MultimediaDD NetworkControl
+
+
+SOURCEPATH .
+SOURCE DriverModule.cpp
+USERINCLUDE ..\..\include
+SYSTEMINCLUDE \epoc32\include
+LIBRARY euser.lib mRuntime.lib
+EXPORTUNFROZEN

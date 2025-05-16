@@ -176,6 +176,7 @@ private:
 			{
 				aValue.Append(0);
 				result = runtime->NewStringL(aValue);
+				delete rep;
 				return result;
 			}
 		}
